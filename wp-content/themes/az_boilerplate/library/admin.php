@@ -65,7 +65,7 @@ http://digwp.com/2010/10/customize-wordpress-dashboard/
 // RSS Dashboard Widget
 function bones_rss_dashboard_widget() {
 	if ( function_exists( 'fetch_feed' ) ) {
-		// include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
+		include_once( ABSPATH . WPINC . '/feed.php' );               // include the required file
 		$feed = fetch_feed( 'http://feeds.feedburner.com/wpcandy' );        // specify the source feed
 		if (is_wp_error($feed)) {
 			$limit = 0;
@@ -77,7 +77,6 @@ function bones_rss_dashboard_widget() {
 	}
 	if ($limit == 0) echo '<div>The RSS Feed is either empty or unavailable.</div>';   // fallback message
 	else foreach ($items as $item) { ?>
-
 	<h4 style="margin-bottom: 0;">
 		<a href="<?php echo $item->get_permalink(); ?>" title="<?php echo mysql2date( __( 'j F Y @ g:i a', 'bonestheme' ), $item->get_date( 'Y-m-d H:i:s' ) ); ?>" target="_blank">
 			<?php echo $item->get_title(); ?>

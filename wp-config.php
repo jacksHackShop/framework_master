@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wp_willow_spring_vineyards');
+define('DB_NAME', 'wp_boilerplate');
 
 /** MySQL database username */
 define('DB_USER', 'admin');
@@ -38,8 +38,10 @@ define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
 /** add home and site url*/
-define('WP_SITEURL', 'http://localhost/willow_spring_vineyards');
-define('WP_HOME', 'http://localhost/willow_spring_vineyards');
+define('WP_SITEURL', 'http://localhost/wp_boilerplate');
+define('WP_HOME', 'http://localhost/wp_boilerplate');
+
+define('WP_DEFAULT_THEME', 'az_boilerplate');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -81,7 +83,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);
+define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
 define( 'WP_DEBUG_DISPLAY', true );
 

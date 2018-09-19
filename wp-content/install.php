@@ -61,7 +61,6 @@ function wp_install_defaults( $user_id ) {
 	wpse_4041_run_activate_plugin( 'akismet/akismet.php' );
   wpse_4041_run_activate_plugin( 'advanced-custom-fields-pro/acf.php' );
   wpse_4041_run_activate_plugin( 'salt-shaker/shaker.php' );
-  do_action('salt_shaker_change_salts');
 }
 
 function wp_new_blog_notification( $blog_title, $blog_url, $user_id, $password ) { /* empty function */ }

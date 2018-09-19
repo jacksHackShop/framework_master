@@ -20,7 +20,7 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'framework_master');
+define('DB_NAME', 'wp_willow_spring_vineyards');
 
 /** MySQL database username */
 define('DB_USER', 'admin');
@@ -38,8 +38,8 @@ define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 
 /** add home and site url*/
-define('WP_SITEURL', 'http://localhost/framework_master');
-define('WP_HOME', 'http://localhost/framework_master');
+define('WP_SITEURL', 'http://localhost/willow_spring_vineyards');
+define('WP_HOME', 'http://localhost/willow_spring_vineyards');
 
 /**#@+
  * Authentication Unique Keys and Salts.
@@ -50,14 +50,14 @@ define('WP_HOME', 'http://localhost/framework_master');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'A]K#,6-?O#,zgkUZ;;|qX%8utlK?+9D}o2p-eR{x-f+1-7r;JO~.mSdRQn(+N7N|');
-define('SECURE_AUTH_KEY',  'aNk%9cFxosqItm#OgvuU#j%1i)- 6X-a}Wy5w+j7pLw[2+d1s.^o6+dCq3`WW|{,');
-define('LOGGED_IN_KEY',    '*ePY9p|Q]}j+cE0vqK3}GQ!Oq4+7!fH-`F7OKk&Zkp`j>G5l5)j5d~UR!n6pCNOg');
-define('NONCE_KEY',        '!#n.pV.-(69SLMc~WHtuDd,-gZy5/b/k4f4.t`GU6ddsHF%CdC>u4Y*;~~(NiO1`');
-define('AUTH_SALT',        'i-Xal,oR 6A9=|91|Lb0u,H0=p`z.r-+hd?f5*Q+(De_C*,y>$+{e<);-J[@@F4g');
-define('SECURE_AUTH_SALT', ' 7{{(s;)hF}Kcx_C6nci6w#)4T7nOyjVfcNTPTh}z/t5F]Riqo[ ;5+:e$M+X?ZG');
-define('LOGGED_IN_SALT',   'g5q%R#C;/i-e%NZb|B2&luXA|E0:,|IPomRc;a#<^W;Bw<IB]PevZys{FR^|ah8i');
-define('NONCE_SALT',       'v171K+3Z?d@D4k$]pQFMB#8$;8uWjcdEq`q_vZI1|8g#,=s-AVn8cW6[hE-DB;[b');
+define('AUTH_KEY',         'yxnh!ci.#@n*{uBi10Rx&$>dtx=.(:gu$DRPA]zp(2xZC:pq)-X>->y140e_$] {');
+define('SECURE_AUTH_KEY',  'ga3CY~9F^WiaE}bqOp 4wx|=0*k:,[MTrXYom[cJ%<za`+SK+~AW:xMFe0PxNo|b');
+define('LOGGED_IN_KEY',    'h;n/.5%YR?;TUj<K>dpam[0l@QR-+Q}*!_4xZ$x?xwqYMNd+-Q=-Sb~`X>/)#.-b');
+define('NONCE_KEY',        'p!R?Hi){MxfOf$Q$bY*fMS#vBo1`MT[9t^31^yE+NTB$/w{`.JX1-cY+r4,g=a.W');
+define('AUTH_SALT',        'RNy5S,z#MRWo!]2#ETsP&k.53G/+f%IEjd>+V{</T0+wQ?N[bL+[CU3=1N[R~im[');
+define('SECURE_AUTH_SALT', 'T?P5U7TLjpv|.?(4%!S-k#mwb&0HUEY H]u$11rYMCsq`[]A/sYRV5nk-Tq2H(X[');
+define('LOGGED_IN_SALT',   '^Jf>fhvamk+ji-*E=rVVa,%|=eVOc%Vr?|3G}=t@v><vpEb`<Q-QAKZOoY>iWSa]');
+define('NONCE_SALT',       '3wpN3g4+HCX> OXm=C<LfY-nB{vcdLQ)S1JVXT5(F2#d9>-;*#J|J%h~UUNrm[kI');
 
 /**#@-*/
 
@@ -82,6 +82,8 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', true);
+define( 'WP_DEBUG_LOG', true );
+define( 'WP_DEBUG_DISPLAY', true );
 
 /* That's all, stop editing! Happy blogging. */
 

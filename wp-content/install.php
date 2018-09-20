@@ -5,20 +5,36 @@
 
 
 //Auto Activates all packaged plugins
-function wpse_4041_run_activate_plugin( $plugin )
+function az_activate_plugin( $plugin )
 {
-    $current = get_option( 'active_plugins' );
-    $plugin  = plugin_basename( trim( $plugin ) );
-    if( !in_array( $plugin, $current ) )
-    {
-        $current[] = $plugin;
-        sort( $current );
-        do_action( 'activate_plugin', trim( $plugin ) );
-        update_option( 'active_plugins', $current );
-        do_action( 'activate_' . trim( $plugin ) );
-        do_action( 'activated_plugin', trim( $plugin ) );
-    }
-    return null;
+  $current = get_option( 'active_plugins' );
+  $plugin  = plugin_basename( trim( $plugin ) );
+  if( !in_array( $plugin, $current ) )
+  {
+    $current[] = $plugin;
+    sort( $current );
+    do_action( 'activate_plugin', trim( $plugin ) );
+    update_option( 'active_plugins', $current );
+    do_action( 'activate_' . trim( $plugin ) );
+    do_action( 'activated_plugin', trim( $plugin ) );
+  }
+  return null;
+}
+
+function write_fresh_salts(){
+	// Define the name of the salts file
+	$salts_file = '../wp-pepper.php';
+	// Define the address of the Salts
+	$salts_api = 'https://api.wordpress.org/secret-key/1.1/salt/';
+
+	// Get a new set of salts
+	$new_salts = file_get_contents( $salts_api );
+	// Open the salts file
+	$sf = fopen( $salts_file, 'w' );
+	// Write the new salts to the salts file
+	fwrite( $sf, "<?php\n".$new_salts."?>" );
+	// Close the file
+	fclose( $sf );
 }
 
 
@@ -58,11 +74,17 @@ function wp_install_defaults( $user_id ) {
 	update_option( 'page_on_front', 1 );
 	update_option( 'show_on_front', 'page' );
 
-	wpse_4041_run_activate_plugin( 'akismet/akismet.php' );
-  wpse_4041_run_activate_plugin( 'advanced-custom-fields-pro/acf.php' );
-  wpse_4041_run_activate_plugin( 'salt-shaker/shaker.php' );
+	az_activate_plugin( 'akismet/akismet.php' );
+  az_activate_plugin( 'advanced-custom-fields-pro/acf.php' );
+  write_fresh_salts();
 }
 
 function wp_new_blog_notification( $blog_title, $blog_url, $user_id, $password ) { /* empty function */ }
+
+function self_destruct(){
+	unlink(__FILE__);
+}
+
+add_action( 'wp_install', 'self_destruct', 999, 0 );
 
 ?>

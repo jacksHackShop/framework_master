@@ -52,14 +52,8 @@ define('WP_DEFAULT_THEME', 'az_boilerplate');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'yxnh!ci.#@n*{uBi10Rx&$>dtx=.(:gu$DRPA]zp(2xZC:pq)-X>->y140e_$] {');
-define('SECURE_AUTH_KEY',  'ga3CY~9F^WiaE}bqOp 4wx|=0*k:,[MTrXYom[cJ%<za`+SK+~AW:xMFe0PxNo|b');
-define('LOGGED_IN_KEY',    'h;n/.5%YR?;TUj<K>dpam[0l@QR-+Q}*!_4xZ$x?xwqYMNd+-Q=-Sb~`X>/)#.-b');
-define('NONCE_KEY',        'p!R?Hi){MxfOf$Q$bY*fMS#vBo1`MT[9t^31^yE+NTB$/w{`.JX1-cY+r4,g=a.W');
-define('AUTH_SALT',        'RNy5S,z#MRWo!]2#ETsP&k.53G/+f%IEjd>+V{</T0+wQ?N[bL+[CU3=1N[R~im[');
-define('SECURE_AUTH_SALT', 'T?P5U7TLjpv|.?(4%!S-k#mwb&0HUEY H]u$11rYMCsq`[]A/sYRV5nk-Tq2H(X[');
-define('LOGGED_IN_SALT',   '^Jf>fhvamk+ji-*E=rVVa,%|=eVOc%Vr?|3G}=t@v><vpEb`<Q-QAKZOoY>iWSa]');
-define('NONCE_SALT',       '3wpN3g4+HCX> OXm=C<LfY-nB{vcdLQ)S1JVXT5(F2#d9>-;*#J|J%h~UUNrm[kI');
+
+require dirname( __FILE__ ).'/wp-pepper.php';
 
 /**#@-*/
 
